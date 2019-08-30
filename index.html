@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tanakasan7010" />
+    <meta property="og:url" content="https://rasukarusan.github.io/instagram-client/" />
+    <meta property="og:title" content="Instagramぶっこ抜き" />
+    <meta property="og:description" content="Instagramの投稿URLを貼り付けるだけで投稿画像・投稿文・ユーザー名が取得できます。" />
+    <meta property="og:image" content="https://rasukarusan.github.io/instagram-client/assets/twitter-card.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/card.css" type="text/css" media="screen" charset="utf-8">
+    <link href="./css/flat-ui.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142495555-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142495555-1');
+    </script>
+    <title>著者検索</title>
+</head>
+<body>
+
+     <div class="container">
+     <h1>著者検索</h1>
+         <div class="form-group shadow-textarea">
+            <textarea id="titles" class="form-control z-depth-1" rows="10" placeholder="本の題名をここに入力" name="titles">
+実験思考
+結局人生はアウトプットで決まる
+ハーバード・スタンフォード流 「自分で考える力」が身につくへんな問題
+父が娘に語る 美しく、深く、壮大で、とんでもなくわかりやすい経済の話。
+キリングクラブ
+睡眠こそ最強の解決策である
+</textarea>
+         </div>
+
+         <br>
+         <button id="submit" type="submit" class="btn btn-primary">検索</button>
+      </div>
+     <br>
+
+
+    <!-- ResultView -->
+    <section id="result" class="pb-5">
+        <div class="container">
+            <h5 id="result-view-title" class="section-title h2">結果</h5>
+            <h5 id="result-view-progress" class="section-title h2"></h5>
+         <div class="form-group shadow-textarea">
+            <textarea id="resultText" class="form-control z-depth-1" rows="10"></textarea>
+         </div>
+        </div>
+    </section>
+
+    <div id="result-card" class="col-xs-12 col-sm-6 col-md-4" hidden >
+        <div class="frontside">
+            <div class="card">
+                <div class="card-body text-center">
+                    <p><img class="post-image img-fluid" src="./assets/no-image.png" alt="card image"></p>
+                    <a class="org-url" href="" target="_blank" rel="noopener noreferrer"><h4 class="username">Account Name</h4></a>
+                    <p class="post-text">Post Text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+</body>
+</html>
+
