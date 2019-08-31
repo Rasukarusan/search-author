@@ -1,5 +1,4 @@
 <?php
-require_once './Function.php';
 $request = json_decode(file_get_contents('php://input'), true);
 $titles = $request['titles'];
 if(empty($titles)) exit;
