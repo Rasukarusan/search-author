@@ -9,9 +9,11 @@ foreach ($titles as $title) {
     $curl_result = fetch($title);
     $json = json_decode($curl_result);
     $authors = getAuthors($json);
+    $category = getCategory($json);
     $result[] = [
         'title' => $title,
-        'authors' => $authors
+        'authors' => $authors,
+        'category' => $category,
     ];
 }
 echo json_encode($result);
@@ -48,4 +50,16 @@ function getAuthors($json) : string {
     }
     $authors = $json->items[0]->volumeInfo->authors;
     return implode(',', $authors);
+}
+
+/**
+ * カテゴリを取得
+ * 
+ * @return string 取得できない場合空文字を返す
+ */
+function getCategory($json) : string {
+    if(is_null($json->items[0]->volumeInfo->categories)) {
+        return '取得できませんでした';
+    }
+    return array_shift($json->items[0]->volumeInfo->categories);
 }

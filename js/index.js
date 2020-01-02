@@ -31,7 +31,8 @@ function exec(titles) {
         results.forEach(function(result) {
             let title = result.title
             let authors = result.authors
-            resultText += title + '\t' + authors + '\n'
+            let category = result.category
+            resultText += title + '\t' + authors + '\t' + category + '\n'
         })
         $('#resultText').val(resultText);
     })
